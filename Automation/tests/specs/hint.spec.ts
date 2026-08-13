@@ -41,7 +41,7 @@ test.describe('Hint', () => {
   /**
    * Fails against the current build: from the second turn onwards the hint can
    * point at a square that is already taken, which the player cannot play.
-   * See docs/BUG_REPORTS.xlsx → BUG-002.
+   * See Manual/BUG_REPORTS.xlsx → BUG-002.
    *
    * The defect is intermittent — roughly one hint in three — so a single turn
    * is not enough evidence either way. Sampling every turn of four games gives

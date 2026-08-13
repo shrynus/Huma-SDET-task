@@ -13,7 +13,7 @@ import { buildUser, type Difficulty } from '../utils/storage.js';
  *
  * The two `@known-issue` tests below fail against the current build. That is
  * deliberate: they encode the correct behaviour and document a real defect.
- * See docs/BUG_REPORTS.xlsx → BUG-001.
+ * See Manual/BUG_REPORTS.xlsx → BUG-001.
  */
 test.describe('Board integrity', () => {
   test.beforeEach(async ({ signIn }) => {
