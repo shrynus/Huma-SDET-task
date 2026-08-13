@@ -1,0 +1,24 @@
+{
+  "name": "huma-tictactoe-sdet-task",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test plan, test cases and Playwright automation for the Tic-Tac-Toe SUT",
+  "type": "module",
+  "scripts": {
+    "serve": "node tools/static-server.mjs",
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:critical": "playwright test --grep @critical",
+    "test:known-issues": "playwright test --grep @known-issue",
+    "test:stable": "playwright test --grep-invert @known-issue",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
