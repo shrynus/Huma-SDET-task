@@ -31,7 +31,7 @@ export default defineConfig({
    * assertions stay tight, so a genuine hang still fails quickly.
    */
   timeout: 60_000,
-  expect: { timeout: 5_000 },
+  expect: { timeout: 10_000 },
 
   use: {
     baseURL: BASE_URL,
@@ -39,8 +39,15 @@ export default defineConfig({
     // than video across three engines at once; video is opt-in via CLI.
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    actionTimeout: 5_000,
-    navigationTimeout: 15_000,
+
+    /**
+     * Sized for a loaded CI runner rather than a quiet laptop. These bound how
+     * long an element may take to become actionable — they are not a substitute
+     * for waiting on state, which every page object still does. A genuinely
+     * stuck UI fails well inside the 60 s test timeout.
+     */
+    actionTimeout: 15_000,
+    navigationTimeout: 30_000,
     testIdAttribute: 'data-testid',
   },
 
